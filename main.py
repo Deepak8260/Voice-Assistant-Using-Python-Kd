@@ -15,6 +15,7 @@ def sptext():
             print('recognizing voice...')
             data = recognizer.recognize_google(audio)
             print(data)
+            return data
         except sr.UnknownValueError:
             print('Not Understanding')
             
@@ -30,4 +31,23 @@ def speechtx(x):
     engine.say(x)
     engine.runAndWait()
     
-speechtx('Hello, Welcome to the World of A-I')
+#speechtx('Hello, Welcome to the World of A-I')
+
+if __name__ == '__main__':
+    
+    
+    #if sptext().lower() == "hey jarvis" :
+        data1 = sptext().lower()
+        if 'your name' in data1:
+            name = 'My Name is jarvis'
+            speechtx(name)
+    
+    #else:
+    #    print('Thanks')
+        
+        
+        
+        
+        
+        
+        
