@@ -1,7 +1,7 @@
 import pyttsx3
 import speech_recognition as sr
 import webbrowser
-import datetime
+import datetime as dt
 import pyjokes
 
 
@@ -39,8 +39,22 @@ if __name__ == '__main__':
     #if sptext().lower() == "hey jarvis" :
         data1 = sptext().lower()
         if 'your name' in data1:
-            name = 'My Name is jarvis'
+            name = 'My Name is Jarvis'
             speechtx(name)
+            
+        elif 'old are you' in data1 or 'your age' in data1 or 'you born' in data1:
+            age = 'I have been created on 6th August 2024 at 12:40 AM. I hope this data helps you to find my age.'
+            speechtx(age)
+        
+        elif 'time' in data1:
+            time = "Ya sure! It's " + dt.datetime.now().strftime('%I:%M %p')
+            speechtx(time)
+        
+        elif 'youtube' in data1:
+            webbrowser.open('https://www.youtube.com/')
+        
+        
+    
     
     #else:
     #    print('Thanks')
