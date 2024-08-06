@@ -18,5 +18,16 @@ def sptext():
         except sr.UnknownValueError:
             print('Not Understanding')
             
-sptext()
+#sptext()
     
+
+def speechtx(x):
+    engine = pyttsx3.init()
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice',voices[1].id)
+    rate = engine.getProperty('rate')
+    engine.setProperty('rate',120)
+    engine.say(x)
+    engine.runAndWait()
+    
+speechtx('Hello, Welcome to the World of A-I')
